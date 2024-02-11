@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Project-153
+    </title>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="./components/main.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-entity id="look" look-controls camera position="0 2 20"></a-entity>
+
+        <a-assets timeout="10000">        
+        <a-asset-item id = "island" src = ".\assets\models\island\scene.gltf"></a-asset-item>   
+        <a-asset-item id = "scuba" src = ".\assets\models\scuba\scene.gltf"></a-asset-item>       
+        </a-assets>
+
+        <a-entity
+        id = "islandMap"
+        gltf-model = "#island"
+        position = "0 0 0"
+        scale = "0.3 0.3 0.3"
+        animation = "property: position; to: 0 0 1000; easing: linear; loop: true; dur: 150000" 
+        
+        island-rotation-reader
+      ></a-entity>
+        <a-entity
+        id = "scuba_model"
+        gltf-model = "#scuba"
+        position = "0 0 15"
+        scale = "1 1"
+        rotation = "0 90 0"
+        scuba-rotation-reader
+      ></a-entity>
+    </a-scene>
+</body>
+</html>
